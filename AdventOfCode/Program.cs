@@ -1,3 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using AdventOfCodeSupport;
 
-Console.WriteLine("Hello, World!");
+var solutions = new AdventSolutions();
+await solutions.DownloadInputsAsync();
+
+var first = solutions.GetDay(2015, 1);
+first.Part1();
+first.Part2();
+
+var second = solutions.GetDay(2015, 2);
+second.Part1();
+
+// fetches input data
+solutions.GetDay(2015, 2);
+
