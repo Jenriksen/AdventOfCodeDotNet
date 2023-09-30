@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using AdventOfCodeSupport;
 
 namespace AdventOfCode._2015;
@@ -38,6 +39,28 @@ public class Day02 : AdventBase
 
     protected override void InternalPart2()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Day 2 - Part 1:");
+        int feetRibbon = 0;
+        string[] InputLinesExamples = new[] { "2x3x4", "1x1x10" };
+        
+        // InputLines
+        foreach (string s in InputLinesExamples)
+        {
+            int[] dimensions = s.Split("x").Select(int.Parse).Order().ToArray();
+            
+            
+            // calculate length of ribbon
+            // start by finding the 2 shortest sides of the box
+            // do it by sorting the list and only using the 2 lowest numbers then
+            // then add a, b and c together for the length used for the bow
+            
+            var boxLength = dimensions[0] * 2 + dimensions[1] * 2;
+            var tieLength = dimensions.Sum();
+
+            var subtotal = boxLength + tieLength;
+            Console.WriteLine($"Amount of ribbon required for this present: {subtotal}f");
+        }
+        
+        Console.WriteLine($"Amount of ribbon required: {feetRibbon}f");
     }
 }
