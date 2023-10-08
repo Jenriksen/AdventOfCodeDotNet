@@ -33,14 +33,13 @@ public class Day02 : AdventBase
             squareFeetWrappingPaper += subtotal;
         }
         
-        Console.WriteLine($"Amount of wrapping paper required: {squareFeetWrappingPaper} in sqF");
+        Console.WriteLine($"Amount of wrapping paper required: {squareFeetWrappingPaper} in sqF \n");
     }
 
     protected override void InternalPart2()
     {
-        Console.WriteLine("Day 2 - Part 1:");
+        Console.WriteLine("Day 2 - Part 2:");
         var feetRibbon = 0;
-        //string[] InputLinesExamples = new[] { "2x3x4", "1x1x10" };
         
         // InputLines
         foreach (string s in InputLines)
@@ -54,6 +53,6 @@ public class Day02 : AdventBase
             feetRibbon += subtotal;
         }
         
-        Console.WriteLine($"Amount of ribbon required: {feetRibbon}f");
+        Console.WriteLine($"Amount of ribbon required: {feetRibbon}f \n");
     }
 }
