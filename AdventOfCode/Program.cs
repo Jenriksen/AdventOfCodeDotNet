@@ -12,6 +12,9 @@ second.Part1();
 second.Part2();
 
 var third = solutions.GetDay(2015, 3);
+third.Part1();
+third.Part2();
+
 // fetches input data
 solutions.GetDay(2015, 3);
 
