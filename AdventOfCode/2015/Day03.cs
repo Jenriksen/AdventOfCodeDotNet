@@ -54,7 +54,7 @@ public class Day03 : AdventBase
         
         housesSanta.UnionWith(housesRoboSanta);
         
-        Console.WriteLine($"Houses delivered to: {housesSanta.Count}");
+        Console.WriteLine($"Houses delivered to: {housesSanta.Count} \n");
     }
 
     private static (int X, int Y) Move((int X, int Y) coordinate, char c)
