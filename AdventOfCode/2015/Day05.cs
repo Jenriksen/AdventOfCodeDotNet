@@ -10,8 +10,6 @@ public class Day05 : AdventBase
         Console.WriteLine("Day 5 - Part 1: ");
 
         int niceStrings = 0;
-
-        bool containsAtLeast3Wovels = false;
         
         // regex will kill me...
         string disallowedPattern = @"ab|cd|pq|xy";
