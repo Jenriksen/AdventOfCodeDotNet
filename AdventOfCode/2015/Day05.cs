@@ -8,8 +8,14 @@ public class Day05 : AdventBase
     protected override void InternalPart1()
     {
         Console.WriteLine("Day 5 - Part 1: ");
-
-        int niceStrings = 0;
+        List<string> testInput = new()
+        {
+            "ugknbfddgicrmopn",
+            "aaa",
+            "jchzalrnumimnmhp",
+            "haegwjzuvuyypxyu",
+            "dvszwmarrgswjxmb"
+        };
         
         // regex will kill me...
         string disallowedPattern = @"ab|cd|pq|xy";
@@ -20,19 +26,10 @@ public class Day05 : AdventBase
         // second rule
         string duplicateLettersPattern = @"(.)\1+";
 
-        foreach (string line in InputLines)
-        {
-            if (Regex.IsMatch(line, containsAtLeast3WovelsPattern))
-            {
-                if (Regex.IsMatch(line, duplicateLettersPattern))
-                {
-                    if (!Regex.IsMatch(line, disallowedPattern))
-                    {
-                        niceStrings++;
-                    }
-                }
-            }
-        }
+        //foreach (string line in InputLines)
+        int niceStrings = testInput.Where(line => Regex.IsMatch(line, containsAtLeast3WovelsPattern))
+            .Where(line => Regex.IsMatch(line, duplicateLettersPattern))
+            .Count(line => !Regex.IsMatch(line, disallowedPattern));
 
         Console.WriteLine($"Amount of nice strings is: {niceStrings}");
 
