@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using AdventOfCodeSupport;
 
@@ -8,30 +9,56 @@ public class Day05 : AdventBase
     protected override void InternalPart1()
     {
         Console.WriteLine("Day 5 - Part 1: ");
-        List<string> testInput = new()
-        {
-            "ugknbfddgicrmopn",
-            "aaa",
-            "jchzalrnumimnmhp",
-            "haegwjzuvuyypxyu",
-            "dvszwmarrgswjxmb"
-        };
+
+        //int niceStrings = 0;
         
         // regex will kill me...
         string disallowedPattern = @"ab|cd|pq|xy";
         
         // first rule
-        string containsAtLeast3WovelsPattern = @"[aeiouy]{3,}";
+        string containsAtLeast3WovelsPattern = @"[aeiou]{3,}";
         
         // second rule
         string duplicateLettersPattern = @"(.)\1+";
 
-        //foreach (string line in InputLines)
-        int niceStrings = testInput.Where(line => Regex.IsMatch(line, containsAtLeast3WovelsPattern))
-            .Where(line => Regex.IsMatch(line, duplicateLettersPattern))
-            .Count(line => !Regex.IsMatch(line, disallowedPattern));
+        // foreach (string line in InputLines)
+        // {
+        //     if (Regex.IsMatch(line, containsAtLeast3WovelsPattern))
+        //     {
+        //         if (Regex.IsMatch(line, duplicateLettersPattern))
+        //         {
+        //             if (!Regex.IsMatch(line, disallowedPattern))
+        //             {
+        //                 niceStrings++;
+        //             }
+        //         }
+        //     }
+        // }
 
-        Console.WriteLine($"Amount of nice strings is: {niceStrings}");
+        char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+        HashSet<string> includes = new HashSet<string>();
+        
+        foreach (string s in InputLines)
+        {
+            int vowelCount = s.Count(c => vowels.Contains(c));
+
+            if (vowelCount < 3)
+                continue;
+            foreach (char c in alphabet.Where(c => s.Contains($"{c}{c}")))
+                includes.Add(s);
+        }
+
+        HashSet<string> niceStrings = new HashSet<string>(includes);
+        string[] badStrings = { "ab", "cd", "pq", "xy" };
+
+        foreach (var s in from s in includes from b in badStrings.Where(s.Contains) select s)
+        {
+            niceStrings.Remove(s);
+        }
+        
+
+        Console.WriteLine($"Amount of nice strings is: {niceStrings.Count}");
 
     }
 
