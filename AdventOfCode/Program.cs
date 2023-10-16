@@ -21,6 +21,7 @@ var fourth = solutions.GetDay(2015, 4);
 
 var fifth = solutions.GetDay(2015, 5);
 fifth.Part1();
+fifth.Part2();
 
 // fetches input data
 solutions.GetDay(2015, 4);
