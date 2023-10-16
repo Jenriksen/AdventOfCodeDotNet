@@ -12,7 +12,7 @@ public class Day05 : AdventBase
 
         char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
         char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-        HashSet<string> includes = new HashSet<string>();
+        HashSet<string> includes = new();
         
         foreach (string s in InputLines)
         {
@@ -24,10 +24,10 @@ public class Day05 : AdventBase
                 includes.Add(s);
         }
 
-        HashSet<string> niceStrings = new HashSet<string>(includes);
+        HashSet<string> niceStrings = new(includes);
         string[] badStrings = { "ab", "cd", "pq", "xy" };
 
-        foreach (var s in from s in includes from b in badStrings.Where(s.Contains) select s)
+        foreach (string? s in from s in includes from b in badStrings.Where(s.Contains) select s)
         {
             niceStrings.Remove(s);
         }
@@ -43,7 +43,7 @@ public class Day05 : AdventBase
 
         char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
         char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-        HashSet<string> includes = new HashSet<string>();
+        HashSet<string> includes = new();
         
         foreach (string s in InputLines)
         {
@@ -55,10 +55,10 @@ public class Day05 : AdventBase
                 includes.Add(s);
         }
 
-        HashSet<string> niceStrings = new HashSet<string>(includes);
+        HashSet<string> niceStrings = new(includes);
         string[] badStrings = { "ab", "cd", "pq", "xy" };
 
-        foreach (var s in from s in includes from b in badStrings.Where(s.Contains) select s)
+        foreach (string? s in from s in includes from b in badStrings.Where(s.Contains) select s)
         {
             niceStrings.Remove(s);
         }
