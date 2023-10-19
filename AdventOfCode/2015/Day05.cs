@@ -39,31 +39,48 @@ public class Day05 : AdventBase
 
     protected override void InternalPart2()
     {
-        Console.WriteLine("Day 5 - Part 1: ");
+        Console.WriteLine("Day 5 - Part 2: ");
 
-        char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
-        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-        HashSet<string> includes = new();
-        
-        foreach (string s in InputLines)
+        var niceStrings = 0;
+        var naughtyStrings = 0;
+
+        var InputLinesTest = new List<string>()
         {
-            int vowelCount = s.Count(c => vowels.Contains(c));
-
-            if (vowelCount < 3)
-                continue;
-            foreach (char c in alphabet.Where(c => s.Contains($"{c}{c}")))
-                includes.Add(s);
-        }
-
-        HashSet<string> niceStrings = new(includes);
-        string[] badStrings = { "ab", "cd", "pq", "xy" };
-
-        foreach (string? s in from s in includes from b in badStrings.Where(s.Contains) select s)
+            "qjhvhtzxzqqjkmpb",
+            "xxyxx",
+            "uurcxstgmygtbstg",
+            "ieodomkazucvgmuy",
+        };
+        
+        foreach (string line in InputLinesTest)
         {
-            niceStrings.Remove(s);
+            if (PairOfAnyTwoLetters(line))
+            {
+                if (RepeatedLetterWithOneLetterBetweenThem(line))
+                {
+                    niceStrings++;
+                }
+                else
+                {
+                    naughtyStrings++;
+                }
+            }
         }
         
 
-        Console.WriteLine($"Amount of nice strings is: {niceStrings.Count}");
+        Console.WriteLine($"Amount of nice strings is: {niceStrings}");
+        Console.WriteLine($"Amount of naughty strings is: {naughtyStrings}");
+    }
+
+    private static bool PairOfAnyTwoLetters(string input)
+    {
+        Regex re = new Regex(@"(..).*?$1");
+        return re.Match(input) != Match.Empty;
+    }
+    
+    private static bool RepeatedLetterWithOneLetterBetweenThem(string input)
+    {
+        Regex re = new Regex(@"(.).?$1");
+        return re.Match(input) != Match.Empty;
     }
 }
