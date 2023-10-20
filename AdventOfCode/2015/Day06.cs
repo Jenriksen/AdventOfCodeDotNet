@@ -4,9 +4,30 @@ namespace AdventOfCode._2015;
 
 public class Day06 : AdventBase
 {
+    private enum Action
+    {
+        Off,
+        On,
+        Toggle
+        
+    }
+    
     protected override void InternalPart1()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("\n Day 5 - Part 2: ");
+
+        int XStartPos;
+        int YStartPos;
+        int XEndPos;
+        int YEndPos;
+        
+        foreach (string line in InputLines)
+        {
+            if line[]
+            var splittedLine = line.Split()
+            
+            
+        }
     }
 
     protected override void InternalPart2()
