@@ -39,6 +39,7 @@ public class Day05 : AdventBase
 
     protected override void InternalPart2()
     {
+        // Part 2 remains unsolved. I will have to return to this one.
         Console.WriteLine("Day 5 - Part 2: ");
 
         var niceStrings = 0;
@@ -56,14 +57,28 @@ public class Day05 : AdventBase
         {
             if (PairOfAnyTwoLetters(line))
             {
+                Console.WriteLine("Found a String with a pair of any two letters.");
                 if (RepeatedLetterWithOneLetterBetweenThem(line))
                 {
+                    Console.WriteLine("Found a niceString!");
                     niceStrings++;
                 }
                 else
                 {
+                    Console.WriteLine("Found a naughtyString");
                     naughtyStrings++;
                 }
+            }
+            
+            if (RepeatedLetterWithOneLetterBetweenThem(line))
+            {
+                Console.WriteLine("Found a niceString!");
+                niceStrings++;
+            }
+            else
+            {
+                Console.WriteLine("Found a naughtyString");
+                naughtyStrings++;
             }
         }
         
