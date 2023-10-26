@@ -11,10 +11,12 @@ public class Day06 : AdventBase
         Toggle
         
     }
-    
+
+    private static int[][] lights;
     protected override void InternalPart1()
     {
         Console.WriteLine("\n Day 5 - Part 2: ");
+        
 
         int XStartPos;
         int YStartPos;
