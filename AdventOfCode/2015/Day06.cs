@@ -12,7 +12,7 @@ public class Day06 : AdventBase
         
     }
 
-    private static int[][] lights;
+    private static bool[,] lights = new bool[1000, 1000];
     protected override void InternalPart1()
     {
         Console.WriteLine("\n Day 5 - Part 2: ");
