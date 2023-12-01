@@ -5,14 +5,14 @@ namespace AdventOfCode._2015;
 
 public class Day02 : AdventBase
 {
-    protected override void InternalPart1()
+    protected override object InternalPart1()
     {
         Console.WriteLine("Day 2 - Part 1:");
         int squareFeetWrappingPaper = 0;
         //string[] inputLinesExamples = new[] { "2x3x4", "1x1x10" };
         
         // InputLines
-        foreach (string s in InputLines)
+        foreach (string s in Input.Lines)
         {
             string[] dimensions = s.Split("x");
             int[] dimensionsInt = dimensions.Select(int.Parse).ToArray();
@@ -36,13 +36,13 @@ public class Day02 : AdventBase
         Console.WriteLine($"Amount of wrapping paper required: {squareFeetWrappingPaper} in sqF \n");
     }
 
-    protected override void InternalPart2()
+    protected override object InternalPart2()
     {
         Console.WriteLine("Day 2 - Part 2:");
         var feetRibbon = 0;
         
         // InputLines
-        foreach (string s in InputLines)
+        foreach (string s in Input.Lines)
         {
             int[] dimensions = s.Split("x").Select(int.Parse).Order().ToArray();
 

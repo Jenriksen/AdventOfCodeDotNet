@@ -5,10 +5,10 @@ namespace AdventOfCode._2015;
 
 public class Day01 : AdventBase
 {
-    protected override void InternalPart1()
+    protected override object InternalPart1()
     {
         int floor = 0;
-        foreach (char c in InputText)
+        foreach (char c in Input.Text)
         {
             if (c == '(')
             {
@@ -23,11 +23,11 @@ public class Day01 : AdventBase
         Console.WriteLine($"Amount of floors is: {floor}");
     }
 
-    protected override void InternalPart2()
+    protected override object InternalPart2()
     {
         int floor = 0;
         int basementIndex = 0;
-        foreach (var (c, index) in InputText.WithIndex())
+        foreach (var (c, index) in Input.Text.WithIndex())
         {
             if (c == '(')
             {

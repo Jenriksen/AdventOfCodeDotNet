@@ -6,13 +6,13 @@ namespace AdventOfCode._2015;
 
 public class Day04 : AdventBase
 {
-    protected override void InternalPart1()
+    protected override object InternalPart1()
     {
         Console.WriteLine("Day 4 - Part 1: ");
         
         // Find md5 hash with secretKey that starts with five zeroes
         // Create a while loop to iterate until it is found
-        string secretKey = InputText;
+        string secretKey = Input.Text;
         long numberAdded = 0;
         string generatedHash = "";
         
@@ -29,13 +29,13 @@ public class Day04 : AdventBase
         Console.WriteLine($"Hash is: {generatedHash}");
     }
 
-    protected override void InternalPart2()
+    protected override object InternalPart2()
     {
         Console.WriteLine("Day 4 - Part 2: ");
         
         // Find md5 hash with secretKey that starts with five zeroes
         // Create a while loop to iterate until it is found
-        string secretKey = InputText;
+        string secretKey = Input.Text;
         long numberAdded = 0;
         string generatedHash = "";
         

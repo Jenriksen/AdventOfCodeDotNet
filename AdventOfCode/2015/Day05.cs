@@ -6,7 +6,7 @@ namespace AdventOfCode._2015;
 
 public class Day05 : AdventBase
 {
-    protected override void InternalPart1()
+    protected override object InternalPart1()
     {
         Console.WriteLine("Day 5 - Part 1: ");
 
@@ -14,7 +14,7 @@ public class Day05 : AdventBase
         char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
         HashSet<string> includes = new();
         
-        foreach (string s in InputLines)
+        foreach (string s in Input.Lines)
         {
             int vowelCount = s.Count(c => vowels.Contains(c));
 
@@ -37,7 +37,7 @@ public class Day05 : AdventBase
 
     }
 
-    protected override void InternalPart2()
+    protected override object InternalPart2()
     {
         // Part 2 remains unsolved. I will have to return to this one.
         Console.WriteLine("Day 5 - Part 2: ");

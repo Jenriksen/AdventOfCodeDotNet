@@ -5,7 +5,7 @@ namespace AdventOfCode._2015;
 
 public class Day03 : AdventBase
 {
-    protected override void InternalPart1()
+    protected override object InternalPart1()
     {
         Console.WriteLine("Day 3 - Part 1: ");
         
@@ -15,7 +15,7 @@ public class Day03 : AdventBase
         var coordinate = (X: 0, Y: 0);
         houses.Add(coordinate);
         
-        foreach (char c in InputText)
+        foreach (char c in Input.Text)
         {
             coordinate = Move(coordinate, c);
             houses.Add(coordinate);
@@ -25,7 +25,7 @@ public class Day03 : AdventBase
         
     }
 
-    protected override void InternalPart2()
+    protected override object InternalPart2()
     {
         Console.WriteLine("Day 3 - Part 2: ");
         
@@ -37,7 +37,7 @@ public class Day03 : AdventBase
         var roboSantaCoordinate = (X: 0, Y: 0);
         housesSanta.Add(santaCoordinate);
         
-        foreach ((char c, int i) in InputText.WithIndex())
+        foreach ((char c, int i) in Input.Text.WithIndex())
         {
             
             if (i % 2 == 0)

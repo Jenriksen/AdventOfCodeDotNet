@@ -13,7 +13,7 @@ public class Day06 : AdventBase
     }
 
     private static bool[,] lights = new bool[1000, 1000];
-    protected override void InternalPart1()
+    protected override object InternalPart1()
     {
         Console.WriteLine("\n Day 5 - Part 2: ");
         
@@ -23,16 +23,16 @@ public class Day06 : AdventBase
         int XEndPos;
         int YEndPos;
         
-        foreach (string line in InputLines)
+        foreach (string line in Input.Lines)
         {
-            if line[]
-            var splittedLine = line.Split()
-            
-            
+            // if line[]
+            // var splittedLine = line.Split();
+
+
         }
     }
 
-    protected override void InternalPart2()
+    protected override object InternalPart2()
     {
         throw new NotImplementedException();
     }
