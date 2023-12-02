@@ -34,6 +34,7 @@ public class Day05 : AdventBase
         
 
         Console.WriteLine($"Amount of nice strings is: {niceStrings.Count}");
+        return niceStrings.Count;
 
     }
 
@@ -85,6 +86,7 @@ public class Day05 : AdventBase
 
         Console.WriteLine($"Amount of nice strings is: {niceStrings}");
         Console.WriteLine($"Amount of naughty strings is: {naughtyStrings}");
+        return niceStrings;
     }
 
     private static bool PairOfAnyTwoLetters(string input)

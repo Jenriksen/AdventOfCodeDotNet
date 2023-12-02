@@ -27,6 +27,7 @@ public class Day04 : AdventBase
 
         Console.WriteLine($"Number added to hash is: {numberAdded}");
         Console.WriteLine($"Hash is: {generatedHash}");
+        return generatedHash;
     }
 
     protected override object InternalPart2()
@@ -50,6 +51,7 @@ public class Day04 : AdventBase
 
         Console.WriteLine($"Number added to hash is: {numberAdded}");
         Console.WriteLine($"Hash is: {generatedHash} \n");
+        return generatedHash;
     }
 
     static string GetMd5Hash(MD5 md5Hash, string input)

@@ -34,6 +34,7 @@ public class Day02 : AdventBase
         }
         
         Console.WriteLine($"Amount of wrapping paper required: {squareFeetWrappingPaper} in sqF \n");
+        return squareFeetWrappingPaper;
     }
 
     protected override object InternalPart2()
@@ -54,5 +55,6 @@ public class Day02 : AdventBase
         }
         
         Console.WriteLine($"Amount of ribbon required: {feetRibbon}f \n");
+        return feetRibbon;
     }
 }

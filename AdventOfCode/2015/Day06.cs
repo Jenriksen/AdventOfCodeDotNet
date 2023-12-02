@@ -30,6 +30,8 @@ public class Day06 : AdventBase
 
 
         }
+
+        return "";
     }
 
     protected override object InternalPart2()

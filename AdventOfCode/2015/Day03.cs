@@ -22,7 +22,8 @@ public class Day03 : AdventBase
         }
 
         Console.WriteLine($"Houses delivered to: {houses.Count}");
-        
+        return houses.Count;
+
     }
 
     protected override object InternalPart2()
@@ -55,6 +56,7 @@ public class Day03 : AdventBase
         housesSanta.UnionWith(housesRoboSanta);
         
         Console.WriteLine($"Houses delivered to: {housesSanta.Count} \n");
+        return housesSanta.Count;
     }
 
     private static (int X, int Y) Move((int X, int Y) coordinate, char c)

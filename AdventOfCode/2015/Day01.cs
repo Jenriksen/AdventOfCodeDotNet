@@ -21,6 +21,7 @@ public class Day01 : AdventBase
         }
 
         Console.WriteLine($"Amount of floors is: {floor}");
+        return floor;
     }
 
     protected override object InternalPart2()
@@ -46,6 +47,7 @@ public class Day01 : AdventBase
         }
 
         Console.WriteLine($"First time Santa enters the basement is: {basementIndex + 1}");
+        return basementIndex + 1;
     }
     
     
