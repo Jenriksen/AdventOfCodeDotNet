@@ -36,7 +36,8 @@ public class Day01 : AdventBase
             
             
         }
-        
+
+        return resultSum;
     }
 
     int ParseMatch(string st) => st switch
