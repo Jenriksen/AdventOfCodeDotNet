@@ -7,6 +7,8 @@ public class Day01 : AdventBase
 {
     protected override object InternalPart1()
     {
+        Console.WriteLine("2023 - Day 1 - Part 1: ");
+        
         const string firstDigitPattern = @"\d";
         const string lastDigitPattern = @"\d(?=[^\d]*$)";
 
@@ -15,8 +17,7 @@ public class Day01 : AdventBase
         foreach (string line in Input.Lines)
         {
             var workingString = RegexFactory(line, firstDigitPattern) + RegexFactory(line, lastDigitPattern);
-            Console.WriteLine(workingString);
-
+            
             resultSum += int.Parse(workingString);
 
         }
@@ -27,20 +28,34 @@ public class Day01 : AdventBase
 
     protected override object InternalPart2()
     {
+        Console.WriteLine("2023 - Day 1 - Part 2:");
+        
         const string regexPattern = @"\d|one|two|three|four|five|six|seven|eight|nine";
         int resultSum = 0;
         foreach (string line in Input.Lines)
         {
-            var first = Regex.Match(line, regexPattern);
-            var last = Regex.Match(line, regexPattern, RegexOptions.RightToLeft);
+            var first = Regex.Match(line, regexPattern).ToString();
+            var last = Regex.Match(line, regexPattern, RegexOptions.RightToLeft).ToString();
+
+            Console.WriteLine(first);
+            Console.WriteLine(last);
             
-            
+            //convert from letters to digits
+            if (!char.IsDigit(first[0]))
+            {
+                int firstDigit = ParseMatch(first);
+            }
+            else
+            {
+                string firstDigit = first;
+            }
+
         }
 
         return resultSum;
     }
 
-    int ParseMatch(string st) => st switch
+    private static int ParseMatch(string st) => st switch
     {
         "" => 0,
         "one" => 1,
@@ -52,10 +67,10 @@ public class Day01 : AdventBase
         "seven" => 7,
         "eight" => 8,
         "nine" => 9,
-        var d => int.Parse(d)
+        _ => int.Parse(st)
     };
 
-    string RegexFactory(string input, string pattern)
+    private static string RegexFactory(string input, string pattern)
     {
         return System.Text.RegularExpressions.Regex.Match(input, pattern).Value;
     }
