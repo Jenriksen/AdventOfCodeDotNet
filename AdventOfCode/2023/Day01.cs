@@ -22,7 +22,7 @@ public class Day01 : AdventBase
 
         }
         
-        return resultSum;
+        return resultSum; // 53651
     }
 
     protected override object InternalPart2()
@@ -47,7 +47,7 @@ public class Day01 : AdventBase
 
         }
         
-        return resultSum;
+        return resultSum; // 53894
     }
 
     private static string ParseMatch(string st) => st switch
