@@ -21,8 +21,7 @@ public class Day01 : AdventBase
             resultSum += int.Parse(workingString);
 
         }
-
-        Console.WriteLine(resultSum);
+        
         return resultSum;
     }
 
@@ -32,42 +31,38 @@ public class Day01 : AdventBase
         
         const string regexPattern = @"\d|one|two|three|four|five|six|seven|eight|nine";
         int resultSum = 0;
+        
         foreach (string line in Input.Lines)
         {
             var first = Regex.Match(line, regexPattern).ToString();
             var last = Regex.Match(line, regexPattern, RegexOptions.RightToLeft).ToString();
 
-            Console.WriteLine(first);
-            Console.WriteLine(last);
-            
             //convert from letters to digits
-            if (!char.IsDigit(first[0]))
-            {
-                int firstDigit = ParseMatch(first);
-            }
-            else
-            {
-                string firstDigit = first;
-            }
+            string firstDigit = !char.IsDigit(first[0]) ? ParseMatch(first) : first;
+
+            //convert from letters to digits
+            string lastDigit = !char.IsDigit(last[0]) ? ParseMatch(last) : last;
+
+            resultSum += int.Parse(firstDigit + lastDigit);
 
         }
-
+        
         return resultSum;
     }
 
-    private static int ParseMatch(string st) => st switch
+    private static string ParseMatch(string st) => st switch
     {
-        "" => 0,
-        "one" => 1,
-        "two" => 2,
-        "three" => 3,
-        "four" => 4,
-        "five" => 5,
-        "six" => 6,
-        "seven" => 7,
-        "eight" => 8,
-        "nine" => 9,
-        _ => int.Parse(st)
+        "" => "0",
+        "one" => "1",
+        "two" => "2",
+        "three" => "3",
+        "four" => "4",
+        "five" => "5",
+        "six" => "6",
+        "seven" => "7",
+        "eight" => "8",
+        "nine" => "9",
+        _ => st
     };
 
     private static string RegexFactory(string input, string pattern)
