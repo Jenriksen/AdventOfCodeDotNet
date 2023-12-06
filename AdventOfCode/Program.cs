@@ -30,6 +30,10 @@ var twentyThreeDayOne = solutions.GetDay(2023, 1);
 twentyThreeDayOne.Part1();
 twentyThreeDayOne.Part2();
 
+var twentyThreeDaySix = solutions.GetDay(2023, 6);
+twentyThreeDaySix.Part1();
+//twentyThreeDaySix.Part2();
+
 // fetches input data
 solutions.GetDay(2015, 4);
 
