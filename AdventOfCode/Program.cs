@@ -27,11 +27,14 @@ var sixth = solutions.GetDay(2015, 6);
 //sixth.Part1();
 
 var twentyThreeDayOne = solutions.GetDay(2023, 1);
-twentyThreeDayOne.Part1();
-twentyThreeDayOne.Part2();
+//twentyThreeDayOne.Part1();
+//twentyThreeDayOne.Part2();
+
+var twentyThreeDayTwo = solutions.GetDay(2023, 2);
+twentyThreeDayTwo.Part1();
 
 var twentyThreeDaySix = solutions.GetDay(2023, 6);
-twentyThreeDaySix.Part1();
+//twentyThreeDaySix.Part1();
 //twentyThreeDaySix.Part2();
 
 // fetches input data

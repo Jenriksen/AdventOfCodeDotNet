@@ -1,6 +1,6 @@
 using AdventOfCodeSupport;
 
-namespace AdventOfCode._2023.Inputs;
+namespace AdventOfCode._2023;
 
 public class Day06 : AdventBase
 {
